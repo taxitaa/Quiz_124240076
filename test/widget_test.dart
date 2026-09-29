@@ -8,23 +8,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:kuis/main.dart';
+import 'package:kuis/pages/dashboard.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('opens the selected culinary detail page', (tester) async {
+    await tester.pumpWidget(const MaterialApp(home: DashboardPage()));
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('Jelajahi cita rasa Nusantara'), findsOneWidget);
+    expect(find.text('Rendang'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    await tester.tap(find.text('Rendang'));
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Bahan utama'), findsOneWidget);
+    expect(find.text('Daging sapi, santan, rempah'), findsOneWidget);
   });
 }
