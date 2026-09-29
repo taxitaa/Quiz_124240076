@@ -1,5 +1,7 @@
 # KUIS PRAKTIKUM PEMROGRAMAN APLIKASI MOBILE
 
-# Nama: Miftahul Jannah
-# NIM: 124240076
-# Plug: SI-C
+ Nama: Miftahul Jannah
+ 
+ NIM: 124240076
+ 
+ Plug: SI-C
